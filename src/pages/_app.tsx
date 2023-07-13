@@ -1,4 +1,5 @@
 import { type AppType } from "next/app";
+import Head from 'next/head';
 import { type Session } from "next-auth";
 import { SessionProvider } from "next-auth/react";
 import { api } from "../utils/api";
@@ -23,6 +24,9 @@ const MyApp: AppType<{ session: Session | null }> = ({
 
   return (
     <SessionProvider session={session}>
+      <Head>
+        <script async src="https://umami.yukicloud.xyz/script.js" data-website-id="fd6e484d-3f67-4b53-8609-013d6c36330a"></script>
+      </Head>
       <Component {...pageProps} />
       <Analytics />
     </SessionProvider>
